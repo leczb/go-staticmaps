@@ -334,6 +334,7 @@ func (t *Transformer) LatLngToXY(ll s2.LatLng) (float64, float64) {
 	x = float64(t.pCenterX) + (x-t.tCenterX)*float64(t.tileSize)
 	y = float64(t.pCenterY) + (y-t.tCenterY)*float64(t.tileSize)
 
+	/* TODO: Fix upstream
 	offset := t.numTiles * float64(t.tileSize)
 	if x < float64(t.pMinX) {
 		for x < float64(t.pMinX) {
@@ -344,6 +345,7 @@ func (t *Transformer) LatLngToXY(ll s2.LatLng) (float64, float64) {
 			x = x - offset
 		}
 	}
+	*/
 	return x, y
 }
 
